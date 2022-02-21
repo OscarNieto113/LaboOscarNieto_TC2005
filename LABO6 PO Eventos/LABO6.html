@@ -1,0 +1,49 @@
+<!DOCTYPE html><!--Se usa para definir la version del html-->
+
+<html>
+  <head>
+    <title>Laboratorio 6 PO Eventos</title>
+    <meta charset = "UTF-8">
+    <LINK REL=StyleSheet HREF="style.css" TYPE="text/css" MEDIA=screen>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div>
+          <img src="https://www.icmetl.org/wp-content/uploads/2020/11/user-icon-human-person-sign-vector-10206693.png" id="icon" alt="User Icon" />
+          <h1></h1>
+            <ul>
+              <li> <b>Alfanumerica:</b> Debe de contener numeros y letras </li>
+              <li> <b>Primera letra Mayuscula:</b> La primera letra de la contraseña debe de ser mayuscula </li>
+              <li> <b>Carácter Especial:</b> Debe de contener al menos un carácter especial </li>
+              <li> <b>Largo de la contraseña 8:</b> El largo de la contraseña debe de ser igual o mayor a 8 </li>
+              <li> <b>No puede estar vacia:</b> La contraseña no puede estar vacia </li>
+              <li> <b>Coincide:</b> La contraseña coincide con la confirmación </li>
+            </ul>
+        </div>
+
+        <!-- Login Form -->
+        <form>
+          <input type="text" id="login" name="login" placeholder="Contraseña">
+          <input type="text" id="password" name="login" placeholder="Repite Contraseña">
+          <input type="submit" value="Validar Contraseña">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+          <a class="underlineHover" href="#">Olvidaste tu contraseña?</a>
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+</html>
