@@ -1,0 +1,89 @@
+<!DOCTYPE html><!--Se usa para definir la version del html-->
+
+<html>
+  <head>
+    <title>Laboratorio 6 PO Eventos</title>
+    <meta charset = "UTF-8">
+    <LINK REL=StyleSheet HREF="style.css" TYPE="text/css" MEDIA=screen>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+    <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+  </head>
+
+  <body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div>
+          <img src="https://www.icmetl.org/wp-content/uploads/2020/11/user-icon-human-person-sign-vector-10206693.png" id="icon" alt="User Icon" />
+          <h1>Oscar Eduardo Nieto Espitia A01705090</h1>
+            <ul>
+              <li> <b>Alfanumerica:</b> Debe de contener numeros y letras </li>
+              <li> <b>Primera letra Mayuscula:</b> La primera letra de la contraseña debe de ser mayuscula </li>
+              <li> <b>Carácter Especial:</b> Debe de contener al menos un carácter especial </li>
+              <li> <b>Largo de la contraseña 8:</b> El largo de la contraseña debe de ser igual o mayor a 8 </li>
+              <li> <b>No puede estar vacia:</b> La contraseña no puede estar vacia </li>
+              <li> <b>Coincide:</b> La contraseña coincide con la confirmación </li>
+            </ul>
+        </div>
+
+        <!-- Login Form -->
+        <form>
+          <input id="pass" type="password" placeholder="Contraseña">
+          <input id="passConfirm" type="password" placeholder="Repite la Contraseña">
+          <button id="login" class="button-2" type="submit"   name ="action"  onclick="verificarPasswords()">Login</button>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+
+
+
+        <!-- Mensajes de Verificación -->
+        <div id="error" class="alert alert-danger ocultar" role="alert">
+            Las Contraseñas no coinciden, vuelve a intentar !
+        </div>
+        <div id="ok" class="alert alert-success ocultar" role="alert">
+            Las Contraseñas coinciden !
+        </div>
+
+
+
+          <!--<a class="underlineHover" href="#">Olvidaste tu contraseña?</a> -->
+        </div>
+
+
+      </div>
+    </div>
+
+  <footer class="page-formFooter">
+    <div>
+      <!--Pregunta 1-->
+      <h2>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h2>
+        <article>
+          <p>Por seguridad y por ahorro de procesamiento por parte del servidor</p>
+        </article>
+      <hr/>
+
+      <!--Pregunta 2-->
+      <h2>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h2>
+        <article>
+          <p>Desactivando los scripts en tu navegador</p>
+        </article>
+      <hr/>
+
+      <!--Pregunta 3-->
+      <h2>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h2>
+        <article>
+          <p>Para descartar posibles vulnerabilidades</p>
+        </article>
+      <hr/>
+    </div>
+  </footer>
+  <script src="evento.js"></script>
+  </body>
+
+</html>
