@@ -1,46 +1,47 @@
-//cd "Labo8"
+//cd "LABO10"
 //node ./app.js   ejecutar
 //http://localhost:3000/   Pagina
-
-// archivos
-const labo1 = fs.readFileSync(`${__dirname}/public/LABO1.html`, 'utf-8');
-const labo3 = fs.readFileSync(`${__dirname}/public/LABO3.html`, 'utf-8');
-const labo4 = fs.readFileSync(`${__dirname}/public/LABO4.html`, 'utf-8');
 
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
 
-const server = http.createServer();
+// archivos
+const labo1 = fs.readFileSync(`${__dirname}/Prueba/LABO1.html`, 'utf-8');
+const labo3 = fs.readFileSync(`${__dirname}/Prueba/LABO3.html`, 'utf-8');
+const labo4 = fs.readFileSync(`${__dirname}/Prueba/LABO4.html`, 'utf-8');
 
 const server = http.createServer( (request, response) => {
-  console.log(request.method, response.url);
+  console.log(request.method, request.url);
 
     if (request.url === '/LABO1') {
       response.writeHead(200, { 'Content-Type': 'text/html' });
       response.end(labo1);
     }
 
-    else if (request.url === '/LABO2') {
+    else if (request.url === '/LABO3') {
       if (request.method == 'GET') {
         response.writeHead(200, { 'Content-Type': 'text/html' });
-        response.end(labo2);
+        response.end(labo3);
       }
 
       else if (request.method == 'POST'){
         console.log("POST");
         let datos = []; //Envio de datos
 
-        response.on('data', (dato) => {
+        request.on('data', (dato) => {
           datos.push(dato);
-        }).on('end', () => {
-
+        });
+        return request.on('end', () => {
         console.log(datos);
-        datos = Buffer.concat(datos).toString(); //Buffer
-        fs.appendFileSync(`${__dirname}/data/informes.txt`, `\n${datos}`);
+        const datos_completos = Buffer.concat(datos).toString(); //Buffer
+
+        fs.appendFileSync(`${__dirname}/Prueba/Prueba.txt`, `\n${datos}`);
         response.writeHead(200, { 'Content-Type': 'text/html' });
-        response.end(labo2);
-      });
+
+        response.end(labo3);
+      });//Return
+    }//else if
     }
 
     else if (request.url === '/LABO4'){
