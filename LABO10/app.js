@@ -1,110 +1,69 @@
-console.log("hola desde node");
+//cd "Labo8"
+//node ./app.js   ejecutar
+//http://localhost:3000/   Pagina
 
-//fs: filesystem
-const filesystem = require('fs');
-
-filesystem.writeFileSync('hola.txt', 'Hola desde node');
-
-
-const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
-
-for (let item of arreglo) {
-    setTimeout(() => {
-        console.log(item);
-    }, item);
-}
-
-
-
-const capybaras = ["Pedro", "Poncho", "Pablo", "Patricio"];
+// archivos
+const labo1 = fs.readFileSync(`${__dirname}/public/LABO1.html`, 'utf-8');
+const labo3 = fs.readFileSync(`${__dirname}/public/LABO3.html`, 'utf-8');
+const labo4 = fs.readFileSync(`${__dirname}/public/LABO4.html`, 'utf-8');
 
 const http = require('http');
+const fs = require('fs');
+const url = require('url');
+
+const server = http.createServer();
 
 const server = http.createServer( (request, response) => {
+  console.log(request.method, response.url);
 
-    if (request.url === '/') {
-        response.setHeader('Content-Type', 'text/html');
-        response.write('<!DOCTYPE html>');
-        response.write('<html lang="es-mx"><head>');
-        response.write('<meta charset="utf-8">');
-        response.write('<title>Capybaras</title>');
-        response.write('</head><body>');
-        response.write('<h1 id="principal">Este sitio es de capybaras</h1>');
-        response.write('<p>Tenemos los siguientes capybaras:</p>');
-        response.write('<ul>');
-        for (let i in capybaras) {
-            response.write('<li>' + capybaras[i] + '</li>');
-        }
-        response.write('</ul>');
-        response.write('<br><br>');
-        response.write('<a href="nuevo">Agregar un nuevo capybara</a>');
-        response.write('</body>');
-        response.end();
-    } else if (request.url === '/nuevo' && request.method === 'GET') {
-        response.setHeader('Content-Type', 'text/html');
-        response.write('<!DOCTYPE html>');
-        response.write('<html lang="es-mx"><head>');
-        response.write('<title>Capybaras</title>');
-        response.write('<meta charset="utf-8">');
-        response.write('</head><body>');
-        response.write('<h1 id="principal">Este sitio es de capybaras</h1>');
-        response.write('<h2>Aquí nacen los capybaras:</h2>');
-        response.write('<form action="nuevo" method="POST">');
-        response.write('<label for="nombre">Nombre: </label> ');
-        response.write('<input type="text" id="nombre" name="nombre" placeholder="Pedro">');
-        response.write('<br><br>');
-        response.write('<input type="submit" value="Enviar">');
-        response.write('</form>');
-        response.write('<br><br>');
-        response.write('<a href="/">Regresar a la lista de capybaras</a>');
-        response.write('</body>');
-        response.end();
-    } else if (request.url === '/nuevo' && request.method === 'POST') {
-        console.log("POST");
-        const datos = [];
-        request.on('data', (dato) => {
-            console.log(dato);
-            datos.push(dato);
-        });
-        return request.on('end', () => {
-            console.log(datos);
-            const datos_completos = Buffer.concat(datos).toString();
-            console.log(datos_completos);
-            const nuevo_dato = datos_completos.split('=')[1];
-            console.log(nuevo_dato);
-            capybaras.push(nuevo_dato);
-            response.setHeader('Content-Type', 'text/html');
-            response.write('<!DOCTYPE html>');
-            response.write('<html lang="es-mx"><head>');
-            response.write('<meta charset="utf-8">');
-            response.write('<title>Capybaras</title>');
-            response.write('</head><body>');
-            response.write('<h1 id="principal">Este sitio es de capybaras</h1>');
-            response.write('<p>Tenemos los siguientes capybaras:</p>');
-            response.write('<ul>');
-            for (let i in capybaras) {
-                response.write('<li>' + capybaras[i] + '</li>');
-            }
-            response.write('</ul>');
-            response.write('<br><br>');
-            response.write('<a href="nuevo">Agregar un nuevo capybara</a>');
-            response.write('</body>');
-            return response.end();
-        });
-    } else {
-        response.statusCode = 404;
-        response.setHeader('Content-Type', 'text/html');
-        response.write('<!DOCTYPE html>');
-        response.write('<html><head>');
-        response.write('<meta charset="utf-8">');
-        response.write('<title>Capybaras | Not found</title>');
-        response.write('</head><body>');
-        response.write('<h1 id="principal">Este capybara no existe, amigo.</h1>');
-        response.write('</body>');
-        response.end();
+    if (request.url === '/LABO1') {
+      response.writeHead(200, { 'Content-Type': 'text/html' });
+      response.end(labo1);
     }
 
+    else if (request.url === '/LABO2') {
+      if (request.method == 'GET') {
+        response.writeHead(200, { 'Content-Type': 'text/html' });
+        response.end(labo2);
+      }
 
+      else if (request.method == 'POST'){
+        console.log("POST");
+        let datos = []; //Envio de datos
+
+        response.on('data', (dato) => {
+          datos.push(dato);
+        }).on('end', () => {
+
+        console.log(datos);
+        datos = Buffer.concat(datos).toString(); //Buffer
+        fs.appendFileSync(`${__dirname}/data/informes.txt`, `\n${datos}`);
+        response.writeHead(200, { 'Content-Type': 'text/html' });
+        response.end(labo2);
+      });
+    }
+
+    else if (request.url === '/LABO4'){
+      response.writeHead(200, { 'Content-Type': 'text/html' });
+      response.end(labo4);
+    }
+
+    else if (request.url === '/style.css'){
+      fs.createReadStream(`${__dirname}/Prueba${url}`).pipe(response);
+    }
+
+    else {
+      response.statusCode = 404;
+      response.setHeader('Content-Type', 'text/html');
+      response.write('<!DOCTYPE html>');
+      response.write('<html><head>');
+      response.write('<meta charset="utf-8">');
+      response.write('<title>Chunchunmaru | Not found</title>');
+      response.write('</head><body>');
+      response.write('<h1 id="principal">Este Chunchunmaru no existe, amigo.</h1>');
+      response.write('</body>');
+      response.end();
+    }
 });
 
 server.listen(3000);
