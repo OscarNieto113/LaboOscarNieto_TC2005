@@ -1,6 +1,9 @@
 //cd "LABO10"
 //node ./app.js   ejecutar
-//http://localhost:3000/   Pagina
+//http://localhost:3000/   Pagina PRINCIPAL
+//http://localhost:3000/LABO1   Pagina Laboratorio 1
+//http://localhost:3000/LABO3   Pagina Laboratorio 3
+//http://localhost:3000/LABO4   Pagina Laboratorio 4
 
 const http = require('http');
 const fs = require('fs');
@@ -19,20 +22,21 @@ const server = http.createServer( (request, response) => {
       response.end(labo1);
     }
 
-    else if (request.url === '/LABO3') {
-      if (request.method == 'GET') {
-        response.writeHead(200, { 'Content-Type': 'text/html' });
-        response.end(labo3);
-      }
+    else if (request.url === '/LABO3'  && request.method === 'GET') {
+      response.writeHead(200, { 'Content-Type': 'text/html' });
+      response.end(labo3);
+    }
 
-      else if (request.method == 'POST'){
-        console.log("POST");
-        let datos = []; //Envio de datos
+    else if (request.method == 'POST' && request.method === 'POST'){
+      console.log("POST");
+      let datos = []; //Envio de datos
 
-        request.on('data', (dato) => {
-          datos.push(dato);
-        });
-        return request.on('end', () => {
+      request.on('data', (dato) => {
+        datos.push(dato);
+        datos.push(dato);
+      });
+
+      return request.on('end', () => {
         console.log(datos);
         const datos_completos = Buffer.concat(datos).toString(); //Buffer
 
@@ -42,7 +46,6 @@ const server = http.createServer( (request, response) => {
         response.end(labo3);
       });//Return
     }//else if
-    }
 
     else if (request.url === '/LABO4'){
       response.writeHead(200, { 'Content-Type': 'text/html' });
