@@ -20,3 +20,4 @@ Políticas de trabajo en equipo:
 -Integra frecuentemente tu rama personal con la rama develop
 -No se hacen commits directamente en develop ni en main. develop y main se utilizan para integrar
 -Siempre que te cambies de rama, haz un git pull
+a
