@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const rutas_capybaras = require('./routes/chunchunmaru.routes');
+const rutas_chunchunmaru = require('./routes/chunchunmaru.routes');
 
 //Para devolver como respuesta un archivo html desde express, se requiere el módulo path, puedes incorporarlo con const path = require('path'); al inicio de tus archivos de código.
 const path = require('path');
@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 
 //ruta url
-app.use('/capybaras', rutas_capybaras);
+app.use('/chunchunmaru', rutas_chunchunmaru);
 
 //Middleware
 app.use((request, response, next) => {

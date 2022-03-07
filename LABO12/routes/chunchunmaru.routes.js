@@ -5,32 +5,52 @@ const path = require('path');
 
 const router = express.Router();
 
-const capybaras = [
-    {nombre: "Pedro"},
-    {nombre: "Poncho"},
-    {nombre: "Pablo"},
-    {nombre: "Patricio"}
+const mistborn = [
+    {nombre: "The last Empire"},
+    {nombre: "The well of ascention"},
+    {nombre: "The hero of ages"},
+];
+
+const standalones = [
+    {nombre: "Elantris"},
+    {nombre: "Warbreaker"},
+];
+
+const stormlight = [
+    {nombre: "The way of kings"},
+    {nombre: "Words of radiance"},
+    {nombre: "Oaathbringer"},
+    {nombre: "Rithm of War"},
+];
+
+const whitesand = [
+    {nombre: "Whitesand 1"},
+    {nombre: "Whitesand 2"},
+    {nombre: "Whitesand 3"},
 ];
 
 router.get('/cerveza', (request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'views', 'cerveza_view.html'));
 });
 
-router.get('/nuevo', (request, response, next) => {
-    console.log('GET /capybaras/nuevo');
-    response.render('nuevo', {nombre: 'Lalo'});
+//------------------------
+router.get('/mistborn', (request, response, next) => {
+    console.log('GET /chunchunmaru/mistborn');
+    response.render('mistborn', {nombre: 'Lalo'});
 });
 
-router.post('/nuevo', (request, response, next) => {
-    console.log('POST /capybaras/nuevo');
+router.post('/mistborn', (request, response, next) => {
+    console.log('POST /chunchunmaru/mistborn');
     console.log(request.body);
     capybaras.push({nombre: request.body.nombre});
-    response.redirect('/capybaras');
+    response.redirect('/chunchunmaru');
 });
+//---------------------------
 
 router.use('/', (request, response, next) => {
-    console.log('Ruta /capybaras');
-    response.render('lista', {capybaras: capybaras});
+    console.log('Ruta /chunchunmaru');
+    //Se envian las variables al html dinamico
+    response.render('lista', {mistborn: mistborn, standalones: standalones, stormlight: stormlight, whitesand: whitesand});
 });
 
 module.exports = router;
