@@ -3,7 +3,7 @@
 //http://localhost:3000/   Pagina PRINCIPAL
 //http://localhost:3000/LABO1   Pagina Laboratorio 1
 //http://localhost:3000/LABO3   Pagina Laboratorio 3
-//http://localhost:3000/LABO4   Pagina Laboratorio 4
+//http://localhost:3000/LABO4   Pagina Laboratorio 4a
 
 const http = require('http');
 const fs = require('fs');
