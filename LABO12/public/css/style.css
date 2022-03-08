@@ -189,9 +189,9 @@
 */
 
 body {
-  background: #eaafc8;
-  background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
-  background: linear-gradient(to right, #eaafc8, #654ea3);
+  background: #818a91;
+  background: -webkit-linear-gradient(to right, #818a91, #eceeef);
+  background: linear-gradient(to right, #818a91, #eceeef);
   min-height: 100vh;
 }
 
