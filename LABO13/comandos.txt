@@ -1,0 +1,11 @@
+cd "LABO12"
+npm start
+npm ejecutando npm init      hacer package.json
+npm install --save-dev nodemon        servidor
+"start": "nodemon app.js"              Agregar al package.json para facilitar el inicio del servidor
+npm install --save express            Rutas
+npm install --save body-parser        Manipular datos de las peticiones
+pm install --save ejs                 HTML dinamico
+
+
+http://localhost:3000/   Pagina PRINCIPAL

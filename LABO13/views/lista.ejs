@@ -1,0 +1,108 @@
+<%- include('includes/head.ejs') %>
+    <h1 id="principal">Este sitio es para llevar la cuenta de los libros que haz leido del Cosmere</h1>
+    <p>Hasta ahora he leido los siguientes libros:</p>
+    <div class="row">
+      <h2>Mistborn: </h2>
+    <% if (mistborn.length > 0) { %>
+        <% for (let mistborn1 of mistborn) { %>
+            <div class="col l3 m4 s12">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="https://www.libreriasinopsis.com/imagenes/9788466/978846665889.JPG">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><%= mistborn1.nombre %><i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><%= mistborn1.nombre %><i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% } else { %>
+        <h1>Hasta ahora no haz leido ninguno de esta saga.</h1>
+    <% } %>
+    <br>
+      <a href="/chunchunmaru/mistborn">Agregar un nuevo libro de la saga Mistborn</a>
+    </div>
+    <div class="row">
+      <h2>Satandalones: </h2>
+    <% if (standalones.length > 0) { %>
+        <% for (let standalones1 of standalones) { %>
+            <div class="col l3 m4 s12">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="https://www.brandonsanderson.com/wp-content/uploads/2019/11/Elantris.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><%= standalones1.nombre %><i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><%= standalones1.nombre %><i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% } else { %>
+        <h1>Hasta ahora no haz leido ninguno de esta saga.</h1>
+    <% } %>
+    <br>
+      <a href="/chunchunmaru/standalones">Agregar un nuevo libro Standalone</a>
+    </div>
+    <div class="row">
+      <h2>Stormlight Archive: </h2>
+    <% if (stormlight.length > 0) { %>
+        <% for (let stormlight1 of stormlight) { %>
+            <div class="col l3 m4 s12">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="https://www.brandonsanderson.com/wp-content/uploads/2019/11/Way-of-Kings.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><%= stormlight1.nombre %><i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><%= stormlight1.nombre %><i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% } else { %>
+        <h1>Hasta ahora no haz leido ninguno de esta saga.</h1>
+    <% } %>
+    <br>
+      <a href="/chunchunmaru/storm">Agregar un nuevo libro de la saga Stormlight Archive</a>
+    </div>
+    <div class="row">
+      <h2>Whitesand: </h2>
+    <% if (whitesand.length > 0) { %>
+        <% for (let whitesand1 of whitesand) { %>
+            <div class="col l3 m4 s12">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="https://www.brandonsanderson.com/wp-content/uploads/2019/11/White-Sand-1.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><%= whitesand1.nombre %><i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><%= whitesand1.nombre %><i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% } else { %>
+        <h1>Hasta ahora no haz leido ninguno de esta saga.</h1>
+    <% } %>
+    </div>
+    <br><br>
+    <a href="/chunchunmaru/whitesand">Agregar un nuevo libro de la saga Whitesand</a>
+<%- include('includes/foot.ejs') %>
