@@ -11,4 +11,5 @@ function verificarPasswords() {
         document.getElementById("ok").classList.remove("ocultar");
         return true;
     }
+
 }
