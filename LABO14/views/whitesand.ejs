@@ -1,5 +1,6 @@
 <%- include('includes/head.ejs') %>
     <h1 id="principal">Agrega aqui los libros que haz leido de la saga White Sand</h1>
+    <h2><%= username %>, Agregas tus libros leidos:</h2>
     <form action="/chunchunmaru/whitesand" method="POST">
         <label for="nombre">Nombre del libro: </label>
         <input type="text" id="nombre" name="nombre" placeholder="Arena Blanca 1">

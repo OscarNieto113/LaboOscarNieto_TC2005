@@ -12,11 +12,10 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><%= mistborn1.nombre %><i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">This is a link</a></p>
+                        <p><a href="https://www.brandonsanderson.com/the-mistborn-saga-the-original-trilogy/">Sobre Mistborn</a></p>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><%= mistborn1.nombre %><i class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
                     </div>
                 </div>
             </div>
@@ -24,9 +23,13 @@
     <% } else { %>
         <h1>Hasta ahora no haz leido ninguno de esta saga.</h1>
     <% } %>
-    <br>
       <a href="/chunchunmaru/mistborn">Agregar un nuevo libro de la saga Mistborn</a>
     </div>
+  <!-- ----------------------------------------------------------------------->
+  <% if (ultimo_mistborn != '') { %>
+      <p>El último libro agregado fue: <%= ultimo_mistborn %></p>
+  <% } %>
+  <!-- ----------------------------------------------------------------------->
     <div class="row">
       <h2>Satandalones: </h2>
     <% if (standalones.length > 0) { %>
@@ -38,11 +41,10 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><%= standalones1.nombre %><i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">This is a link</a></p>
+                        <p><a href="https://www.brandonsanderson.com/standalones-cosmere/">Sobre más Standalones</a></p>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><%= standalones1.nombre %><i class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
                     </div>
                 </div>
             </div>
@@ -53,6 +55,11 @@
     <br>
       <a href="/chunchunmaru/standalones">Agregar un nuevo libro Standalone</a>
     </div>
+    <!-- ----------------------------------------------------------------------->
+    <% if (ultimo_mistborn != '') { %>
+        <p>El último libro agregado fue: <%= ultimo_mistborn %></p>
+    <% } %>
+    <!-- ----------------------------------------------------------------------->
     <div class="row">
       <h2>Stormlight Archive: </h2>
     <% if (storm.length > 0) { %>
@@ -64,11 +71,10 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><%= storm1.nombre %><i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">This is a link</a></p>
+                        <p><a href="https://www.brandonsanderson.com/the-stormlight-archive-series/">Sobre Stormlight Archive</a></p>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><%= storm1.nombre %><i class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
                     </div>
                 </div>
             </div>
@@ -79,6 +85,11 @@
     <br>
       <a href="/chunchunmaru/storm">Agregar un nuevo libro de la saga Stormlight Archive</a>
     </div>
+    <!-- ----------------------------------------------------------------------->
+    <% if (ultimo_mistborn != '') { %>
+        <p>El último libro agregado fue: <%= ultimo_mistborn %></p>
+    <% } %>
+    <!-- ----------------------------------------------------------------------->
     <div class="row">
       <h2>Whitesand: </h2>
     <% if (whitesand.length > 0) { %>
@@ -90,11 +101,10 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><%= whitesand1.nombre %><i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">This is a link</a></p>
+                        <p><a href="https://www.brandonsanderson.com/white-sand-graphic-novels/">Sobre Whitesand</a></p>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><%= whitesand1.nombre %><i class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
                     </div>
                 </div>
             </div>
@@ -105,4 +115,9 @@
     </div>
     <br><br>
     <a href="/chunchunmaru/whitesand">Agregar un nuevo libro de la saga Whitesand</a>
+    <!-- ----------------------------------------------------------------------->
+    <% if (ultimo_mistborn != '') { %>
+        <p>El último libro agregado fue: <%= ultimo_mistborn %></p>
+    <% } %>
+    <!-- ----------------------------------------------------------------------->
 <%- include('includes/foot.ejs') %>

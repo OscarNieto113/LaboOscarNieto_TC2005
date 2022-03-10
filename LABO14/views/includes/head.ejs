@@ -14,16 +14,21 @@
     <title>Brandon Sanderson</title>
 </head>
 
+
 <body>
 
     <nav class="site-footer">
         <div>
-          <a href="#" class="site-footer">Brandon Sanderson</a>
+          <a href="/chunchunmaru" class="site-footer">Brandon Sanderson</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/chunchunmaru/storm">THE STORMLIGHT ARCHIVE</a></li>
             <li><a href="/chunchunmaru/mistborn">THE MISTBORN SAGA</a></li>
             <li><a href="/chunchunmaru/standalones">STANDALONES</a></li>
-            <li><a href="/chunchunmaru/whithesand">WHITE SAND</a></li>
+            <li><a href="/chunchunmaru/whitesand">WHITE SAND</a></li>
+            <% if (username != '') { %>
+              <li><%= username %></li>
+              <li><a href="/users/logout">Salir</a></li>
+            <% } %>
           </ul>
         </div>
       </nav>

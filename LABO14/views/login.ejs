@@ -1,0 +1,13 @@
+<%- include('includes/head.ejs') %>
+    <h1 id="principal">Este sitio es de capybaras</h1>
+    <h2>Para ingresar al sitio, introduce tus datos de acceso:</h2>
+    <form action="/users/login" method="POST">
+        <label for="username">Nombre de usuario: </label>
+        <input type="text" id="username" name="username" placeholder="Pedro">
+        <label for="password">Contraseña: </label>
+        <input type="password" id="password" name="password">
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <br><br>
+<%- include('includes/foot.ejs') %>

@@ -7,6 +7,7 @@ npm install --save express            Rutas
 npm install --save body-parser        Manipular datos de las peticiones
 npm install --save ejs                 HTML dinamico
 npm install cookie-parser
+npm install express-session
 
 
 http://localhost:3000/   Pagina PRINCIPAL

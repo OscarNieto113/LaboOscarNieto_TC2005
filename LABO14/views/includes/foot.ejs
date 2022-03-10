@@ -27,4 +27,11 @@
         </div>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        <% if (info != '') { %>
+            M.toast({html: '<i class="material-icons">info</i> <%= info %>', classes: 'rounded light-blue darken-1'});
+        <% } %>
+    </script>
 </footer>
