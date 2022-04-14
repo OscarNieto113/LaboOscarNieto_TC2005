@@ -1,0 +1,4 @@
+Laboratorio 15 implementado en el proyecto
+https://github.com/OscarNieto113/DLC
+La conexión con la base de datos se encuentra en la carpeta util
+y se utiliza en los modelos y controladores
