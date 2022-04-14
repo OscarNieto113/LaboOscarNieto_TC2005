@@ -1,0 +1,3 @@
+Laboratorio 22 implementado en el proyecto
+https://github.com/OscarNieto113/DLC
+Subida ded archivos se implemento para subir imagenes. Para esto se utilizó el multer

@@ -1,0 +1,3 @@
+Laboratorio 24 implementado en el proyecto
+https://github.com/OscarNieto113/DLC
+Se implemento para hacer busquedas

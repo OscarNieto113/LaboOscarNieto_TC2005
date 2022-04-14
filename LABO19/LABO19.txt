@@ -1,0 +1,3 @@
+Laboratorio 19 implementado en el proyecto
+https://github.com/OscarNieto113/DLC
+Los roles se implementaron tanto en los controladores como en las vistas
